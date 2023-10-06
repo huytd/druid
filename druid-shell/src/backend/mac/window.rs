@@ -256,8 +256,7 @@ impl WindowBuilder {
     pub fn build(self) -> Result<WindowHandle, Error> {
         assert_main_thread();
         unsafe {
-            let mut style_mask = NSWindowStyleMask::NSClosableWindowMask
-                | NSWindowStyleMask::NSMiniaturizableWindowMask;
+            let mut style_mask = NSWindowStyleMask::NSClosableWindowMask;
 
             if self.show_titlebar {
                 style_mask |= NSWindowStyleMask::NSTitledWindowMask;
